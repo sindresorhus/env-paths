@@ -49,6 +49,9 @@ module.exports = name => {
 		throw new TypeError(`Expected string, got ${typeof name}`);
 	}
 
+	// add suffix to prevent possible conflict with native apps
+	name += '-nodejs';
+
 	if (process.platform === 'darwin') {
 		return macos(name);
 	}
