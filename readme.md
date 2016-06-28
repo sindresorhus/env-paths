@@ -17,10 +17,10 @@ const envPaths = require('env-paths');
 const paths = envPaths('MyApp');
 
 paths.data;
-//=> '/home/sindresorhus/.local/share/MyApp'
+//=> '/home/sindresorhus/.local/share/MyApp-nodejs'
 
 paths.config
-//=> '/home/sindresorhus/.config/MyApp'
+//=> '/home/sindresorhus/.config/MyApp-nodejs'
 ```
 
 
