@@ -49,7 +49,7 @@ module.exports = (name, opts) => {
 		throw new TypeError(`Expected string, got ${typeof name}`);
 	}
 
-	opts = Object.assign({ suffix: 'nodejs' }, opts);
+	opts = Object.assign({suffix: 'nodejs'}, opts);
 
 	if (opts.suffix) {
 		// add suffix to prevent possible conflict with native apps

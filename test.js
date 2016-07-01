@@ -1,11 +1,11 @@
 import test from 'ava';
 import m from './';
 
-test('default suffix', t => {
+test('default options', t => {
 	const name = 'unicorn';
 	const paths = m(name);
 
-	console.log(`name: '${name}' suffix = undefined`);
+	console.log(`name: '${name}' opts = undefined`);
 
 	Object.keys(paths).forEach(key => {
 		const val = paths[key];
@@ -18,15 +18,15 @@ test('default suffix', t => {
 
 test('custom suffix', t => {
 	const name = 'unicorn';
-	const suffix = 'horn';
-	const paths = m(name, suffix);
+	const opts = {suffix: 'horn'};
+	const paths = m(name, opts);
 
-	console.log(`name: '${name}' suffix = '${suffix}'`);
+	console.log(`name: '${name}' opts = {suffix: '${opts.suffix}'}`);
 
 	Object.keys(paths).forEach(key => {
 		const val = paths[key];
 		console.log(`  ${key}: ${val}`);
-		t.true(val.endsWith(`${name}-${suffix}`));
+		t.true(val.endsWith(`${name}-${opts.suffix}`));
 	});
 
 	console.log('\n');
@@ -34,9 +34,9 @@ test('custom suffix', t => {
 
 test('no suffix', t => {
 	const name = 'unicorn';
-	const paths = m(name, null);
+	const paths = m(name, {suffix: ''});
 
-	console.log(`name: '${name}' suffix = null`);
+	console.log(`name: '${name}' opts = {suffix: ''}`);
 
 	Object.keys(paths).forEach(key => {
 		const val = paths[key];
