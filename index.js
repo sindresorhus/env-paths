@@ -44,14 +44,16 @@ const linux = name => {
 	};
 };
 
-module.exports = (name, suffix) => {
+module.exports = (name, opts) => {
 	if (typeof name !== 'string') {
 		throw new TypeError(`Expected string, got ${typeof name}`);
 	}
 
-	if (typeof suffix === 'undefined' || typeof suffix === 'string') {
+	opts = Object.assign({ suffix: 'nodejs' }, opts);
+
+	if (opts.suffix) {
 		// add suffix to prevent possible conflict with native apps
-		name += `-${suffix || 'nodejs'}`;
+		name += `-${opts.suffix}`;
 	}
 
 	if (process.platform === 'darwin') {
