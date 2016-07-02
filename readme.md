@@ -22,23 +22,7 @@ paths.data;
 paths.config
 //=> '/home/sindresorhus/.config/MyApp-nodejs'
 ```
-### You can optionally pass a custom suffix
 
-```js
-const paths = envPaths('MyApp', {suffix: 'electron'});
-
-paths.data;
-//=> '/home/sindresorhus/.local/share/MyApp-electron'
-```
-
-### ...or disable it completely
-
-```js
-const paths = envPaths('MyApp', {suffix: ''});
-
-paths.data;
-//=> '/home/sindresorhus/.local/share/MyApp'
-```
 
 ## API
 
@@ -54,12 +38,12 @@ Name of your project. Used to generate the paths.
 
 ##### suffix
 
-Type: `string`  
-Default: `nodejs`
+Type: `string`<br>
+Default: `'nodejs'`
 
-Optional suffix appended to the project name, to avoid conflicts with native
-apps using the same name. Pass an empty string to disable.
-
+**Don't use this option unless you really have to!**<br>
+Suffix appended to the project name to avoid name conflicts with native
+apps. Pass an empty string to disable it.
 
 ### paths.data
 
