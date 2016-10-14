@@ -32,7 +32,7 @@ const windows = name => {
 };
 
 const linux = name => {
-	const username = homedir.split('/')[2];
+	const username = path.basename(homedir);
 
 	return {
 		data: env.XDG_DATA_HOME || path.join(homedir, '.local', 'share', name),
