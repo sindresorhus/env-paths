@@ -31,15 +31,16 @@ const windows = name => {
 	};
 };
 
+// https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 const linux = name => {
 	const username = path.basename(homedir);
 
 	return {
-		data: env.XDG_DATA_HOME || path.join(homedir, '.local', 'share', name),
-		config: env.XDG_CONFIG_HOME || path.join(homedir, '.config', name),
-		cache: env.XDG_CACHE_HOME || path.join(homedir, '.cache', name),
+		data: path.join(env.XDG_DATA_HOME || path.join(homedir, '.local', 'share'), name),
+		config: path.join(env.XDG_CONFIG_HOME || path.join(homedir, '.config'), name),
+		cache: path.join(env.XDG_CACHE_HOME || path.join(homedir, '.cache'), name),
 		// https://wiki.debian.org/XDGBaseDirectorySpecification#state
-		log: env.XDG_STATE_HOME || path.join(homedir, '.local', 'state', name),
+		log: path.join(env.XDG_STATE_HOME || path.join(homedir, '.local', 'state'), name),
 		temp: path.join(tmpdir, username, name)
 	};
 };
