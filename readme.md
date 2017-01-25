@@ -2,6 +2,8 @@
 
 > Get paths for storing things like data, config, cache, etc
 
+Uses the correct OS-specific paths. Most developers get this wrong.
+
 
 ## Install
 
