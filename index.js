@@ -19,12 +19,13 @@ const macos = name => {
 };
 
 const windows = name => {
+	const appData = env.APPDATA || path.join(homedir, 'AppData', 'Roaming');
 	const localAppData = env.LOCALAPPDATA || path.join(homedir, 'AppData', 'Local');
 
 	return {
 		// Data/config/cache/log are invented by me as Windows isn't opinionated about this
 		data: path.join(localAppData, name, 'Data'),
-		config: path.join(localAppData, name, 'Config'),
+		config: path.join(appData, name, 'Config'),
 		cache: path.join(localAppData, name, 'Cache'),
 		log: path.join(localAppData, name, 'Log'),
 		temp: path.join(tmpdir, name)
