@@ -8,7 +8,7 @@ Uses the correct OS-specific paths. Most developers get this wrong.
 ## Install
 
 ```
-$ npm install --save env-paths
+$ npm install env-paths
 ```
 
 
@@ -37,6 +37,8 @@ Type: `string`
 Name of your project. Used to generate the paths.
 
 #### options
+
+Type: `Object`
 
 ##### suffix
 
