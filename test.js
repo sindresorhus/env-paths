@@ -1,32 +1,31 @@
 import test from 'ava';
-import m from './';
+import envPaths from '.';
 
 test('default', t => {
 	const name = 'unicorn';
-	const paths = m(name);
+	const paths = envPaths(name);
 
-	Object.keys(paths).forEach(key => {
-		const val = paths[key];
-		console.log(`  ${key}: ${val}`);
-		t.true(val.endsWith(`${name}-nodejs`));
-	});
+	for (const [key, value] of Object.entries(paths)) {
+		console.log(`  ${key}: ${value}`);
+		t.true(value.endsWith(`${name}-nodejs`));
+	}
 });
 
 test('custom suffix', t => {
 	const name = 'unicorn';
 	const opts = {suffix: 'horn'};
-	const paths = m(name, opts);
+	const paths = envPaths(name, opts);
 	t.true(paths.data.endsWith(`${name}-${opts.suffix}`));
 });
 
 test('no suffix', t => {
 	const name = 'unicorn';
 	const opts = {suffix: false};
-	const paths = m(name, opts);
+	const paths = envPaths(name, opts);
 	t.true(paths.data.endsWith(name));
 });
 
-// linux-specific tests
+// Linux-specific tests
 if (process.platform === 'linux') {
 	test('correct paths with XDG_*_HOME set', t => {
 		const envVars = {
@@ -36,16 +35,16 @@ if (process.platform === 'linux') {
 			log: 'XDG_STATE_HOME'
 		};
 
-		Object.values(envVars).forEach(env => {
+		for (const env of Object.values(envVars)) {
 			process.env[env] = `/tmp/${env}`;
-		});
+		}
 
 		const name = 'unicorn';
-		const paths = m(name);
+		const paths = envPaths(name);
 
-		Object.keys(envVars).forEach(env => {
+		for (const env of Object.keys(envVars)) {
 			const expectedPath = process.env[envVars[env]];
 			t.true(paths[env].startsWith(expectedPath) && paths[env].endsWith(`${name}-nodejs`));
-		});
+		}
 	});
 }
