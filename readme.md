@@ -16,6 +16,7 @@ $ npm install env-paths
 
 ```js
 const envPaths = require('env-paths');
+
 const paths = envPaths('MyApp');
 
 paths.data;
