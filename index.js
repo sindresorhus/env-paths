@@ -46,7 +46,7 @@ const linux = name => {
 	};
 };
 
-module.exports = (name, options) => {
+const envPaths = (name, options) => {
 	if (typeof name !== 'string') {
 		throw new TypeError(`Expected string, got ${typeof name}`);
 	}
@@ -68,3 +68,6 @@ module.exports = (name, options) => {
 
 	return linux(name);
 };
+
+module.exports = envPaths;
+module.exports.default = envPaths;
