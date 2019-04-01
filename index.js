@@ -70,4 +70,5 @@ const envPaths = (name, options) => {
 };
 
 module.exports = envPaths;
+// TODO: Remove this for the next major release
 module.exports.default = envPaths;
