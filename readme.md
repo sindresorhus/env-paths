@@ -31,6 +31,8 @@ paths.config
 
 ### paths = envPaths(name, [options])
 
+Note: It only generates the path strings. It doesn't create the directories for you. You could use [`make-dir`](https://github.com/sindresorhus/make-dir) to create the directories.
+
 #### name
 
 Type: `string`

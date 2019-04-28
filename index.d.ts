@@ -42,6 +42,8 @@ declare const envPaths: {
 	/**
 	Get paths for storing things like data, config, cache, etc.
 
+	Note: It only generates the path strings. It doesn't create the directories for you. You could use [`make-dir`](https://github.com/sindresorhus/make-dir) to create the directories.
+
 	@param name - Name of your project. Used to generate the paths.
 	@returns The paths to use for your project on current OS.
 
