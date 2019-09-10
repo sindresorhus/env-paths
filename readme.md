@@ -29,7 +29,7 @@ paths.config
 
 ## API
 
-### paths = envPaths(name, [options])
+### paths = envPaths(name, options?)
 
 Note: It only generates the path strings. It doesn't create the directories for you. You could use [`make-dir`](https://github.com/sindresorhus/make-dir) to create the directories.
 
@@ -41,7 +41,7 @@ Name of your project. Used to generate the paths.
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 ##### suffix
 
@@ -73,6 +73,14 @@ Directory for log files.
 Directory for temporary files.
 
 
-## License
+---
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+<div align="center">
+	<b>
+		<a href="https://tidelift.com/subscription/pkg/npm-env-paths?utm_source=npm-env-paths&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
+	</b>
+	<br>
+	<sub>
+		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
+	</sub>
+</div>
