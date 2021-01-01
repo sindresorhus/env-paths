@@ -1,4 +1,4 @@
-# env-paths [![Build Status](https://travis-ci.org/sindresorhus/env-paths.svg?branch=master)](https://travis-ci.org/sindresorhus/env-paths)
+# env-paths
 
 > Get paths for storing things like data, config, cache, etc
 
