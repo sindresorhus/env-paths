@@ -56,6 +56,12 @@ apps. Pass an empty string to disable it.
 
 Directory for data files.
 
+Example locations (with the default `nodejs` [suffix](#suffix)):
+
+- macOS: `~/Library/Application Support/MyApp-nodejs`
+- Windows: `%LOCALAPPDATA%\MyApp-nodejs\Data` (e.g., `C:\Users\USERNAME\AppData\Local\MyApp-nodejs\Data`)
+- Linux: `~/.local/share/MyApp-nodejs` (or `$XDG_DATA_HOME/MyApp-nodejs`)
+
 ### paths.config
 
 Directory for config files.
@@ -70,14 +76,31 @@ Example locations (with the default `nodejs` [suffix](#suffix)):
 
 Directory for non-essential data files.
 
+Example locations (with the default `nodejs` [suffix](#suffix)):
+
+- macOS: `~/Library/Caches/MyApp-nodejs`
+- Windows: `%LOCALAPPDATA%\MyApp-nodejs\Cache` (e.g., `C:\Users\USERNAME\AppData\Local\MyApp-nodejs\Cache`)
+- Linux: `~/.cache/MyApp-nodejs` (or `$XDG_CACHE_HOME/MyApp-nodejs`)
+
 ### paths.log
 
 Directory for log files.
+
+Example locations (with the default `nodejs` [suffix](#suffix)):
+
+- macOS: `~/Library/Logs/MyApp-nodejs`
+- Windows: `%LOCALAPPDATA%\MyApp-nodejs\Log` (e.g., `C:\Users\USERNAME\AppData\Local\MyApp-nodejs\Log`)
+- Linux: `~/.local/state/MyApp-nodejs` (or `$XDG_STATE_HOME/MyApp-nodejs`)
 
 ### paths.temp
 
 Directory for temporary files.
 
+Example locations (with the default `nodejs` [suffix](#suffix)):
+
+- macOS: `/var/folders/jf/f2twvvvs5jl_m49tf034ffpw0000gn/T/MyApp-nodejs`
+- Windows: `%LOCALAPPDATA%\Temp\MyApp-nodejs` (e.g., `C:\Users\USERNAME\AppData\Local\Temp\MyApp-nodejs`; )
+- Linux: `/tmp/MyApp-nodejs`
 
 ---
 
