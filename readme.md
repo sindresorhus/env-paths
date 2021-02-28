@@ -60,6 +60,12 @@ Directory for data files.
 
 Directory for config files.
 
+Example locations (with the default `nodejs` [suffix](#suffix)):
+
+- macOS: `~/Library/Preferences/MyApp-nodejs`
+- Windows: `%APPDATA%\MyApp-nodejs\Config`
+- Linux: `~/.config/MyApp-nodejs` (or `$XDG_CONFIG_HOME/MyApp-nodejs`)
+
 ### paths.cache
 
 Directory for non-essential data files.
