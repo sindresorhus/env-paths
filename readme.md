@@ -100,7 +100,7 @@ Example locations (with the default `nodejs` [suffix](#suffix)):
 
 - macOS: `/var/folders/jf/f2twvvvs5jl_m49tf034ffpw0000gn/T/MyApp-nodejs`
 - Windows: `%LOCALAPPDATA%\Temp\MyApp-nodejs` (for example, `C:\Users\USERNAME\AppData\Local\Temp\MyApp-nodejs`)
-- Linux: `/tmp/MyApp-nodejs`
+- Linux: `/tmp/USERNAME/MyApp-nodejs`
 
 ---
 
