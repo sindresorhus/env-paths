@@ -58,7 +58,7 @@ declare namespace envPaths {
 		/**
 		Directory for temporary files.
 
-		Example locations (with the default `nodejs` [suffix](#suffix)):
+		Example locations:
 
 		- macOS: `/var/folders/jf/f2twvvvs5jl_m49tf034ffpw0000gn/T/MyApp-nodejs`
 		- Windows: `%LOCALAPPDATA%\Temp\MyApp-nodejs` (for example, `C:\Users\USERNAME\AppData\Local\Temp\MyApp-nodejs`)
