@@ -14,7 +14,7 @@ declare namespace envPaths {
 		/**
 		Directory for data files.
 
-		Example locations:
+		Example locations (with the default `nodejs` suffix):
 
 		- macOS: `~/Library/Application Support/MyApp-nodejs`
 		- Windows: `%LOCALAPPDATA%\MyApp-nodejs\Data` (for example, `C:\Users\USERNAME\AppData\Local\MyApp-nodejs\Data`)
@@ -25,7 +25,7 @@ declare namespace envPaths {
 		/**
 		Directory for data files.
 
-		Example locations:
+		Example locations (with the default `nodejs` suffix):
 
 		- macOS: `~/Library/Preferences/MyApp-nodejs`
 		- Windows: `%APPDATA%\MyApp-nodejs\Config` (for example, `C:\Users\USERNAME\AppData\Roaming\MyApp-nodejs\Config`)
@@ -36,7 +36,7 @@ declare namespace envPaths {
 		/**
 		Directory for non-essential data files.
 
-		Example locations:
+		Example locations (with the default `nodejs` suffix):
 
 		- macOS: `~/Library/Caches/MyApp-nodejs`
 		- Windows: `%LOCALAPPDATA%\MyApp-nodejs\Cache` (for example, `C:\Users\USERNAME\AppData\Local\MyApp-nodejs\Cache`)
@@ -47,7 +47,7 @@ declare namespace envPaths {
 		/**
 		Directory for log files.
 
-		Example locations:
+		Example locations (with the default `nodejs` suffix):
 
 		- macOS: `~/Library/Logs/MyApp-nodejs`
 		- Windows: `%LOCALAPPDATA%\MyApp-nodejs\Log` (for example, `C:\Users\USERNAME\AppData\Local\MyApp-nodejs\Log`)
@@ -58,7 +58,7 @@ declare namespace envPaths {
 		/**
 		Directory for temporary files.
 
-		Example locations:
+		Example locations (with the default `nodejs` suffix):
 
 		- macOS: `/var/folders/jf/f2twvvvs5jl_m49tf034ffpw0000gn/T/MyApp-nodejs`
 		- Windows: `%LOCALAPPDATA%\Temp\MyApp-nodejs` (for example, `C:\Users\USERNAME\AppData\Local\Temp\MyApp-nodejs`)
