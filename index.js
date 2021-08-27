@@ -1,6 +1,6 @@
-'use strict';
-const path = require('path');
-const os = require('os');
+import path from 'node:path';
+import os from 'node:os';
+import process from 'node:process';
 
 const homedir = os.homedir();
 const tmpdir = os.tmpdir();
@@ -14,7 +14,7 @@ const macos = name => {
 		config: path.join(library, 'Preferences', name),
 		cache: path.join(library, 'Caches', name),
 		log: path.join(library, 'Logs', name),
-		temp: path.join(tmpdir, name)
+		temp: path.join(tmpdir, name),
 	};
 };
 
@@ -28,7 +28,7 @@ const windows = name => {
 		config: path.join(appData, name, 'Config'),
 		cache: path.join(localAppData, name, 'Cache'),
 		log: path.join(localAppData, name, 'Log'),
-		temp: path.join(tmpdir, name)
+		temp: path.join(tmpdir, name),
 	};
 };
 
@@ -42,20 +42,18 @@ const linux = name => {
 		cache: path.join(env.XDG_CACHE_HOME || path.join(homedir, '.cache'), name),
 		// https://wiki.debian.org/XDGBaseDirectorySpecification#state
 		log: path.join(env.XDG_STATE_HOME || path.join(homedir, '.local', 'state'), name),
-		temp: path.join(tmpdir, username, name)
+		temp: path.join(tmpdir, username, name),
 	};
 };
 
-const envPaths = (name, options) => {
+export default function envPaths(name, {suffix = 'nodejs'} = {}) {
 	if (typeof name !== 'string') {
-		throw new TypeError(`Expected string, got ${typeof name}`);
+		throw new TypeError(`Expected a string, got ${typeof name}`);
 	}
 
-	options = Object.assign({suffix: 'nodejs'}, options);
-
-	if (options.suffix) {
+	if (suffix) {
 		// Add suffix to prevent possible conflict with native apps
-		name += `-${options.suffix}`;
+		name += `-${suffix}`;
 	}
 
 	if (process.platform === 'darwin') {
@@ -67,8 +65,4 @@ const envPaths = (name, options) => {
 	}
 
 	return linux(name);
-};
-
-module.exports = envPaths;
-// TODO: Remove this for the next major release
-module.exports.default = envPaths;
+}

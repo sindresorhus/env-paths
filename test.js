@@ -1,5 +1,6 @@
+import process from 'node:process';
 import test from 'ava';
-import envPaths from '.';
+import envPaths from './index.js';
 
 test('default', t => {
 	const name = 'unicorn';
@@ -13,15 +14,14 @@ test('default', t => {
 
 test('custom suffix', t => {
 	const name = 'unicorn';
-	const opts = {suffix: 'horn'};
-	const paths = envPaths(name, opts);
-	t.true(paths.data.endsWith(`${name}-${opts.suffix}`));
+	const options = {suffix: 'horn'};
+	const paths = envPaths(name, options);
+	t.true(paths.data.endsWith(`${name}-${options.suffix}`));
 });
 
 test('no suffix', t => {
 	const name = 'unicorn';
-	const opts = {suffix: false};
-	const paths = envPaths(name, opts);
+	const paths = envPaths(name, {suffix: false});
 	t.true(paths.data.endsWith(name));
 });
 
@@ -32,7 +32,7 @@ if (process.platform === 'linux') {
 			data: 'XDG_DATA_HOME',
 			config: 'XDG_CONFIG_HOME',
 			cache: 'XDG_CACHE_HOME',
-			log: 'XDG_STATE_HOME'
+			log: 'XDG_STATE_HOME',
 		};
 
 		for (const env of Object.values(envVars)) {

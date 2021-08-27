@@ -4,18 +4,16 @@
 
 Uses the correct OS-specific paths. Most developers get this wrong.
 
-
 ## Install
 
 ```
 $ npm install env-paths
 ```
 
-
 ## Usage
 
 ```js
-const envPaths = require('env-paths');
+import envPaths from 'env-paths';
 
 const paths = envPaths('MyApp');
 
@@ -25,7 +23,6 @@ paths.data;
 paths.config
 //=> '/home/sindresorhus/.config/MyApp-nodejs'
 ```
-
 
 ## API
 
@@ -37,7 +34,7 @@ Note: It only generates the path strings. It doesn't create the directories for 
 
 Type: `string`
 
-Name of your project. Used to generate the paths.
+The name of your project. Used to generate the paths.
 
 #### options
 
@@ -45,10 +42,11 @@ Type: `object`
 
 ##### suffix
 
-Type: `string`<br>
+Type: `string`\
 Default: `'nodejs'`
 
-**Don't use this option unless you really have to!**<br>
+**Don't use this option unless you really have to!**
+
 Suffix appended to the project name to avoid name conflicts with native
 apps. Pass an empty string to disable it.
 
