@@ -10,8 +10,8 @@ const macos = name => {
 	const library = path.join(homedir, 'Library');
 
 	return {
-		data: path.join(library, 'Application Support', name),
-		config: path.join(library, 'Preferences', name),
+		data: path.join(library, 'Preferences', name),
+		config: path.join(library, 'Application Support', name),
 		cache: path.join(library, 'Caches', name),
 		log: path.join(library, 'Logs', name),
 		temp: path.join(tmpdir, name),
