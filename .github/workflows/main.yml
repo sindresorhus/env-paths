@@ -11,9 +11,13 @@ jobs:
       matrix:
         node-version:
           - 16
+          - lts/-2
+          - lts/-1
+          - lts/*
+          - latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
